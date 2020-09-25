@@ -1,0 +1,1 @@
+oc new-app --name robi-hook --as-deployment-config https://github.com/robipozzi/DO288-apps --context-dir=post-commit-robi
