@@ -1,1 +1,1 @@
-oc set build-hook bc/robi-hook --post-commit --script=".test.sh"
+oc set build-hook bc/robi-hook --post-commit --script="/opt/test/test.sh"
