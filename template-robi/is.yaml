@@ -1,0 +1,86 @@
+apiVersion: v1
+items:
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2020-09-30T15:05:40Z"
+    generation: 1
+    labels:
+      app: quotesapi
+      app.kubernetes.io/component: quotesapi
+      app.kubernetes.io/instance: quotesapi
+    managedFields:
+    - apiVersion: image.openshift.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:openshift.io/generated-by: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+      manager: oc
+      operation: Update
+      time: "2020-09-30T15:05:40Z"
+    name: quotesapi
+    namespace: roberto-pozzi-it-quotes-dev
+    resourceVersion: "21027381"
+    selfLink: /apis/image.openshift.io/v1/namespaces/roberto-pozzi-it-quotes-dev/imagestreams/quotesapi
+    uid: ce2e8207-943b-45ca-b546-a7dd6660dcba
+  spec:
+    lookupPolicy:
+      local: false
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/roberto-pozzi-it-quotes-dev/quotesapi
+    publicDockerImageRepository: default-route-openshift-image-registry.apps.eu45.prod.nextcle.com/roberto-pozzi-it-quotes-dev/quotesapi
+    tags:
+    - items:
+      - created: "2020-09-30T15:06:18Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/roberto-pozzi-it-quotes-dev/quotesapi@sha256:b7bef08b4c79032ce8313b4e7b67ba9d29531dabc633572b4540a825f83c0c3c
+        generation: 1
+        image: sha256:b7bef08b4c79032ce8313b4e7b67ba9d29531dabc633572b4540a825f83c0c3c
+      tag: latest
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/image.dockerRepositoryCheck: "2020-09-30T15:05:27Z"
+    creationTimestamp: "2020-09-30T15:05:26Z"
+    generation: 2
+    name: quotesdb
+    namespace: roberto-pozzi-it-quotes-dev
+    resourceVersion: "21026853"
+    selfLink: /apis/image.openshift.io/v1/namespaces/roberto-pozzi-it-quotes-dev/imagestreams/quotesdb
+    uid: 3e8e05ce-d72e-4c91-aa05-a174dfcfdd65
+  spec:
+    lookupPolicy:
+      local: false
+    tags:
+    - annotations: null
+      from:
+        kind: DockerImage
+        name: image-registry.openshift-image-registry.svc:5000/openshift/mysql:5.7
+      generation: 2
+      importPolicy: {}
+      name: "5.7"
+      referencePolicy:
+        type: Source
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/roberto-pozzi-it-quotes-dev/quotesdb
+    publicDockerImageRepository: default-route-openshift-image-registry.apps.eu45.prod.nextcle.com/roberto-pozzi-it-quotes-dev/quotesdb
+    tags:
+    - items:
+      - created: "2020-09-30T15:05:27Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/openshift/mysql@sha256:9a781abe7581cc141e14a7e404ec34125b3e89c008b14f4e7b41e094fd3049fe
+        generation: 2
+        image: sha256:9a781abe7581cc141e14a7e404ec34125b3e89c008b14f4e7b41e094fd3049fe
+      tag: "5.7"
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
