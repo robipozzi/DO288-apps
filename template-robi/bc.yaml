@@ -1,0 +1,105 @@
+apiVersion: v1
+items:
+- apiVersion: build.openshift.io/v1
+  kind: BuildConfig
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2020-09-30T15:05:40Z"
+    labels:
+      app: quotesapi
+      app.kubernetes.io/component: quotesapi
+      app.kubernetes.io/instance: quotesapi
+    managedFields:
+    - apiVersion: build.openshift.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:openshift.io/generated-by: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+        f:spec:
+          f:output:
+            f:to:
+              .: {}
+              f:kind: {}
+              f:name: {}
+          f:runPolicy: {}
+          f:source:
+            f:contextDir: {}
+            f:git:
+              .: {}
+              f:uri: {}
+            f:type: {}
+          f:strategy:
+            f:sourceStrategy:
+              .: {}
+              f:from:
+                .: {}
+                f:kind: {}
+                f:name: {}
+                f:namespace: {}
+            f:type: {}
+      manager: oc
+      operation: Update
+      time: "2020-09-30T15:05:40Z"
+    - apiVersion: build.openshift.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:triggers: {}
+        f:status:
+          f:lastVersion: {}
+      manager: openshift-apiserver
+      operation: Update
+      time: "2020-09-30T15:05:40Z"
+    name: quotesapi
+    namespace: roberto-pozzi-it-quotes-dev
+    resourceVersion: "21027049"
+    selfLink: /apis/build.openshift.io/v1/namespaces/roberto-pozzi-it-quotes-dev/buildconfigs/quotesapi
+    uid: b2640f0b-700d-432e-9d9d-d008dd8b4d23
+  spec:
+    failedBuildsHistoryLimit: 5
+    nodeSelector: null
+    output:
+      to:
+        kind: ImageStreamTag
+        name: quotesapi:latest
+    postCommit: {}
+    resources: {}
+    runPolicy: Serial
+    source:
+      contextDir: quotes
+      git:
+        uri: https://github.com/robipozzi/DO288-apps
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: ImageStreamTag
+          name: php:7.2
+          namespace: openshift
+      type: Source
+    successfulBuildsHistoryLimit: 5
+    triggers:
+    - github:
+        secret: 0kqcfGBSss62aZUYddNs
+      type: GitHub
+    - generic:
+        secret: qSlntJ-U3z3oLuR_6tIV
+      type: Generic
+    - type: ConfigChange
+    - imageChange:
+        lastTriggeredImageID: image-registry.openshift-image-registry.svc:5000/openshift/php@sha256:feb82582395558abc7823cff3800753aaa7bf976c5a4869bc921dd53e7eef447
+      type: ImageChange
+  status:
+    lastVersion: 1
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
