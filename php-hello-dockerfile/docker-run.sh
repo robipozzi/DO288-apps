@@ -1,0 +1,1 @@
+docker run --name php-hello -p 8080:8080 quay.io/robipozzi/robi-php-hello

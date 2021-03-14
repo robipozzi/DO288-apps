@@ -1,0 +1,1 @@
+oc secrets link default robipozzi-quay --for pull
